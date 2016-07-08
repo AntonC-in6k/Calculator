@@ -68,4 +68,9 @@ public class TDDPracticeTests {
         String expectedMessage = "Negatives not allowed: -3 -5";
         checkForRightExceptionMessage("1,2,-3,4,-5", expectedMessage);
     }
+
+    @Test
+    public void digitMoreThanOneThousandMustBeIgnoredTest() throws Exception {
+        assertThat(Calculator.add("1,2000,3,4,5"), is(13));
+    }
 }

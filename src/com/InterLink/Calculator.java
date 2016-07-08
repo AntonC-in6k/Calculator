@@ -30,7 +30,10 @@ public class Calculator {
                 counterOfNegativeDigits++;
                 groupOfNegativeDigits += digit + " ";
             }
-            result += Integer.parseInt(digit);
+            if (Integer.parseInt(digit)<1000){
+                result += Integer.parseInt(digit);
+            }
+
         }
         if (counterOfNegativeDigits > 0) {
             throw new RuntimeException("Negatives not allowed: " + groupOfNegativeDigits.trim());
