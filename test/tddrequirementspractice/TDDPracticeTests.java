@@ -36,4 +36,10 @@ public class TDDPracticeTests {
         assertThat(Calculator.add("1,2,3,4,5"), is(15));
     }
 
+    @Test
+    public void inputNumbersSeparatedByNewLineTest() throws Exception{
+        assertThat(Calculator.add("1\n2,3,4,5"), is(15));
+    }
+
+
 }
