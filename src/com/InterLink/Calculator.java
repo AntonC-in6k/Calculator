@@ -22,8 +22,6 @@ public class Calculator {
             }
             input = input.substring(3 + customDelimiter.length());
             delimiters+="|"+customDelimiter;
-            System.out.print(customDelimiter);
-            System.out.print(input);
         }
 
         int counterOfNegativeDigits = 0;
