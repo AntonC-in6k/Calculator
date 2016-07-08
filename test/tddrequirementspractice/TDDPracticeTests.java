@@ -74,8 +74,7 @@ public class TDDPracticeTests {
         assertThat(Calculator.add("1,2000,3,4,5"), is(13));
     }
 
-    @Test
-    public void delimiterFreeSizeTest() throws Exception {
-        assertThat(Calculator.add("//[;;]\n1,2,3;;4,5"), is(15));
-    }
+
+
+
 }

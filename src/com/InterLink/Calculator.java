@@ -18,11 +18,12 @@ public class Calculator {
             customDelimiter = input;
             customDelimiter = customDelimiter.substring(0, customDelimiter.indexOf("\n")).substring(2);
             if (customDelimiter.startsWith("[")&&customDelimiter.endsWith("]")){
-                customDelimiter=customDelimiter.substring(0, customDelimiter.length()-1).substring(1);
+                customDelimiter=customDelimiter.substring(0, customDelimiter.length()).substring(1);
             }
-            input = input.substring(5 + customDelimiter.length());
+            input = input.substring(3 + customDelimiter.length());
             delimiters+="|"+customDelimiter;
             System.out.print(customDelimiter);
+            System.out.print(input);
         }
 
         int counterOfNegativeDigits = 0;
