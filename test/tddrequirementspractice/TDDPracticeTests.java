@@ -1,12 +1,11 @@
 package tddrequirementspractice;
 
-import org.junit.Assert;
 import org.junit.Test;
 import com.InterLink.Calculator;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
+
 
 /**
  * Created by employee on 7/8/16.
@@ -28,12 +27,13 @@ public class TDDPracticeTests {
     }
 
     @Test (expected = RuntimeException.class)
-    public void inputMoreThanTwoNumbersTest() throws Exception{
-        Calculator.add("1,2,3");
-    }
-    @Test (expected = RuntimeException.class)
     public void inputNotNumberTest() throws Exception{
         Calculator.add("1,x");
+    }
+
+    @Test
+    public void inputManyNumbersTest() throws Exception{
+        assertThat(Calculator.add("1,2,3,4,5"), is(15));
     }
 
 }
