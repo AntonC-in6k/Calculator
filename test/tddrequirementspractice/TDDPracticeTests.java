@@ -48,4 +48,24 @@ public class TDDPracticeTests {
         assertThat(Calculator.add("//;\n1,2,3;4,5"), is(15));
     }
 
+    public void checkForRightExceptionMessage(String addParam, String expectedMessage) {
+        try {
+            Calculator.add(addParam);
+        } catch (RuntimeException e) {
+            assertThat(e.getMessage(), is(expectedMessage));
+        }
+
+    }
+
+    @Test
+    public void inputOneDigitDegreeZero() throws Exception {
+        String expectedMessage = "Negatives not allowed: -3";
+        checkForRightExceptionMessage("1,2,-3,4,5", expectedMessage);
+    }
+
+    @Test
+    public void inputMoreThanOneDigitsDegreeZero() throws Exception {
+        String expectedMessage = "Negatives not allowed: -3 -5";
+        checkForRightExceptionMessage("1,2,-3,4,-5", expectedMessage);
+    }
 }
